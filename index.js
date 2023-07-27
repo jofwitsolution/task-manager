@@ -12,10 +12,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 //Routes
-app.use("/", rootRoute);
+// app.use("/", rootRoute);
 app.use("/api/v1/tasks", taskRoutes);
 app.use(errorHandler);
 app.use(notFound);
