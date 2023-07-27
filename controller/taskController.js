@@ -12,15 +12,11 @@ const createTask = async (req, res, next) => {
     }
 
     // create the task
-    // const task = new Task({
-    //   name: req.body.name,
-    // });
-
-    const task = await Task.create({
-      name: "",
+    const task = new Task({
+      name: req.body.name,
     });
 
-    // await task.save();
+    await task.save();
 
     res.status(201).json({ task });
   } catch (error) {
